@@ -1,0 +1,16 @@
+import Dependencies._
+
+ThisBuild / scalaVersion := "3.3.3"
+
+lazy val AkkaVersion = "2.6.21"
+
+lazy val root = (project in file("."))
+  .settings(
+    name := "WampusWorldAkka",
+    version := "0.1.0",
+    libraryDependencies ++= Seq(
+      "com.typesafe.akka" %% "akka-actor"       % AkkaVersion,
+      "com.typesafe.akka" %% "akka-actor-typed" % AkkaVersion,
+	  "ch.qos.logback" % "logback-classic" % "1.2.3" % Runtime // Додаємо Logback для реалізації логування
+    )
+  )
